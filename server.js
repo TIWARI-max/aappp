@@ -6,6 +6,9 @@ const path = require('path');
 const app = express();
 app.use(express.json({ limit: '256kb' }));
 
+app.get('/', (req, res) => {
+    res.redirect('/forme.html');
+});
 const DATA_FILE = path.join(__dirname, 'push-subscriptions.json');
 const PORT = process.env.PORT || 3000;
 
